@@ -1,46 +1,31 @@
-import { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-export default function ComingSoon() {
-  const [email, setEmail] = useState("");
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
 
-  const handleSubscribe = () => {
-    alert(`Subscribed with: ${email}`);
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center text-white"
-         style={{ backgroundImage: "url('/background-image.png')" }}>
-      <div className="text-center">
-        <img src="/logo.png" alt="Nelta Logo" className="w-32 mx-auto mb-6" />
-        <h1 className="text-5xl font-bold">COMING SOON</h1>
-        <p className="text-lg mt-4">We’re working on something awesome!</p>
-
-        <div className="mt-6 flex items-center bg-white p-2 rounded-full shadow-md">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="p-2 w-64 text-black rounded-l-full outline-none"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick={handleSubscribe} className="bg-blue-600 text-white px-6 py-2 rounded-full">
-            Subscribe
-          </button>
-        </div>
-
-        <p className="mt-4 text-sm">Be the first to know when we launch.</p>
-
-        <div className="mt-6 flex space-x-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.png" alt="LinkedIn" className="w-8" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="/instagram-icon.png" alt="Instagram" className="w-8" />
-          </a>
-        </div>
-
-        <p className="mt-6 text-sm">contact@nelta.sa</p>
-      </div>
-    </div>
-  );
-}
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="background-image.png" alt="Coming Soon">
+</body>
+</html>
