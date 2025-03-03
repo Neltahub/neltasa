@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
-    * {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,18 +15,15 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: hidden; /* Verhindert Scrollen */
-}
-
-body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 img {
-    width: 100vw; /* Volle Breite des Bildschirms */
-    height: 100vh; /* Volle Höhe des Bildschirms */
-    object-fit: cover; /* Skaliert das Bild, ohne es zu verzerren */
+    max-width: 100vw; /* Maximal die volle Breite des Bildschirms */
+    max-height: 100vh; /* Maximal die volle Höhe des Bildschirms */
+    object-fit: contain; /* Verhindert Abschneiden des Bildes */
 }
 
     </style>
