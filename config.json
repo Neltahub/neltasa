@@ -1,0 +1,16 @@
+{
+  "default": {
+    "email": "contact@nelta.sa",
+    "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it"
+  },
+  "domains": {
+    "nelta.me": {
+      "email": "contact@nelta.me",
+      "linkedin": "https://www.linkedin.com/company/nelta-middle-east/"
+    },
+    "nelta.ae": {
+      "email": "contact@nelta.ae",
+      "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it"
+    }
+  }
+}
