@@ -31,11 +31,6 @@
             height: 40px;
             margin-right: 10px;
         }
-        nav {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
         h1 {
             font-size: 48px;
             margin: 0;
@@ -43,42 +38,6 @@
         p {
             font-size: 18px;
             margin: 10px 0 30px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center; /* Sorgt für vertikale Zentrierung */
-            justify-content: center;
-            gap: 10px;
-        }
-        input[type="email"] {
-            padding: 10px;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 80%;
-            max-width: 400px;
-            /* height: 50px;
-            line-height: 50px;*/
-            font-size: 16px;
-            vertical-align: middle;
-        }
-        button:hover {
-            background-color: #003d80;
         }
         footer {
             position: absolute;
@@ -104,13 +63,6 @@
             p {
                 font-size: 20px;
             }
-            form {
-                flex-direction: row;
-                gap: 10px;
-            }
-            input[type="email"], button {
-                width: auto;
-            }
             footer {
                 flex-direction: row;
                 justify-content: space-between;
@@ -130,10 +82,10 @@
 
     <footer>
         <div>
-            <a href="mailto:contact@nelta.sa" style="color: white; text-decoration: none;">contact@nelta.sa</a>
+            <a id="email" href="mailto:contact@nelta.sa" style="color: white; text-decoration: none;">contact@nelta.sa</a>
         </div>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/company/nelta-confidence-for-your-it" target="_blank">
+            <a id="linkedin" href="https://www.linkedin.com/company/nelta-confidence-for-your-it" target="_blank">
                 <img src="LinkedIn.png" alt="LinkedIn">
             </a>
             <a href="https://www.instagram.com/nelta_official/" target="_blank">
@@ -141,5 +93,23 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        fetch("config.json")
+            .then(response => response.json())
+            .then(config => {
+                const domain = window.location.hostname;
+                const settings = config.domains[domain] || config.default;
+
+                // Setzt die Email-Adresse
+                document.getElementById("email").textContent = settings.email;
+                document.getElementById("email").href = "mailto:" + settings.email;
+
+                // Setzt den LinkedIn-Link
+                document.getElementById("linkedin").href = settings.linkedin;
+            })
+            .catch(error => console.error("Fehler beim Laden der Konfigurationsdatei:", error));
+    </script>
 </body>
 </html>
+
