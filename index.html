@@ -10,8 +10,6 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background: url('Background.png') no-repeat center center/cover;
-            color: white;
             text-align: center;
             height: 100vh;
             display: flex;
@@ -19,6 +17,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background: no-repeat center center/cover;
         }
         header {
             position: absolute;
@@ -46,7 +45,7 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            padding: 0 20px;
+            padding: 20px;
             box-sizing: border-box;
         }
         .social-icons a {
@@ -56,60 +55,50 @@
         .social-icons img {
             height: 30px;
         }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 64px;
-            }
-            p {
-                font-size: 20px;
-            }
-            footer {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="Logo.png" alt="Nelta Logo">
-    </header>
+<header>
+    <img src="Logo.png" alt="Nelta Logo">
+</header>
+<main>
+    <h1>COMING SOON ...</h1>
+    <p>We're working on something awesome!</p>
+</main>
+<footer>
+    <div>
+        <a id="email" href="#" style="color: white; text-decoration: none;"></a>
+    </div>
+    <div class="social-icons">
+        <a id="linkedin" href="#" target="_blank">
+            <img src="LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/nelta_official/" target="_blank">
+            <img src="Instagram.png" alt="Instagram">
+        </a>
+    </div>
+</footer>
+<script>
+    fetch("config.json")
+        .then(response => response.json())
+        .then(config => {
+            const domain = window.location.hostname;
+            const settings = config.domains[domain] || config.default;
 
-    <main>
-        <h1>COMING SOON ...</h1>
-        <p>We're working on something awesome!</p>
-    </main>
+            // Setze die Email-Adresse
+            document.getElementById("email").textContent = settings.email;
+            document.getElementById("email").href = "mailto:" + settings.email;
 
-    <footer>
-        <div>
-            <a id="email" href="mailto:contact@nelta.sa" style="color: white; text-decoration: none;">contact@nelta.sa</a>
-        </div>
-        <div class="social-icons">
-            <a id="linkedin" href="https://www.linkedin.com/company/nelta-confidence-for-your-it" target="_blank">
-                <img src="LinkedIn.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/nelta_official/" target="_blank">
-                <img src="Instagram.png" alt="Instagram">
-            </a>
-        </div>
-    </footer>
+            // Setze den LinkedIn-Link
+            document.getElementById("linkedin").href = settings.linkedin;
 
-    <script>
-        fetch("config.json")
-            .then(response => response.json())
-            .then(config => {
-                const domain = window.location.hostname;
-                const settings = config.domains[domain] || config.default;
-
-                // Setzt die Email-Adresse
-                document.getElementById("email").textContent = settings.email;
-                document.getElementById("email").href = "mailto:" + settings.email;
-
-                // Setzt den LinkedIn-Link
-                document.getElementById("linkedin").href = settings.linkedin;
-            })
-            .catch(error => console.error("Fehler beim Laden der Konfigurationsdatei:", error));
-    </script>
+            // Setze den Hintergrund
+            document.body.style.backgroundImage = `url(${settings.background})`;
+        })
+        .catch(error => console.error("Fehler beim Laden der Konfigurationsdatei:", error));
+</script>
 </body>
+</html>
+
 </html>
 
