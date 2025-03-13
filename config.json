@@ -1,16 +1,24 @@
 {
-  "default": {
-    "email": "contact@nelta.sa",
-    "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it"
-  },
-  "domains": {
-    "nelta.me": {
-      "email": "contact@nelta.me",
-      "linkedin": "https://www.linkedin.com/company/nelta-middle-east/"
+    "default": {
+        "email": "contact@nelta.sa",
+        "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it",
+        "background": "Background.png"
     },
-    "nelta.ae": {
-      "email": "contact@nelta.ae",
-      "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it"
+    "domains": {
+        "nelta.me": {
+            "email": "contact@nelta.me",
+            "linkedin": "https://www.linkedin.com/company/nelta-middle-east/",
+            "background": "Background.png"
+        },
+        "nelta.ae": {
+            "email": "contact@nelta.ae",
+            "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it",
+            "background": "vereinigtearabischeemirate.png"
+        },
+        "nelta.sa": {
+            "email": "contact@nelta.sa",
+            "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it",
+            "background": "saudiarabien.png"
+        }
     }
-  }
 }
