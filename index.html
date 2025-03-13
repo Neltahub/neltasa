@@ -18,6 +18,7 @@
             align-items: center;
             overflow: hidden;
             background: no-repeat center center/cover;
+            color: white;
         }
         header {
             position: absolute;
@@ -29,6 +30,9 @@
         header img {
             height: 40px;
             margin-right: 10px;
+        }
+        h1, p {
+            color: white;
         }
         h1 {
             font-size: 48px;
@@ -42,11 +46,20 @@
             position: absolute;
             bottom: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
+        }
+        .email-container {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+        .social-icons {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
         }
         .social-icons a {
             margin: 0 5px;
@@ -66,7 +79,7 @@
     <p>We're working on something awesome!</p>
 </main>
 <footer>
-    <div>
+    <div class="email-container">
         <a id="email" href="#" style="color: white; text-decoration: none;"></a>
     </div>
     <div class="social-icons">
@@ -99,6 +112,7 @@
 </script>
 </body>
 </html>
+
 
 </html>
 
