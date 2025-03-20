@@ -19,6 +19,11 @@
             "email": "contact@nelta.sa",
             "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it",
             "background": "saudiarabien.png"
+        },
+        "nelta.om": {
+            "email": "contact@nelta.om",
+            "linkedin": "https://www.linkedin.com/company/nelta-confidence-for-your-it",
+            "background": "oman.png"
         }
     }
 }
